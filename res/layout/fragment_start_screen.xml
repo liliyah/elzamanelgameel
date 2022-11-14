@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".StartScreenFragment">
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:id="@+id/framelayout"
+            android:layout_height="wrap_content"
+            android:background="@drawable/oldyellowpic">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_gravity="center_horizontal"
+                android:layout_marginTop="40dp"
+                android:layout_height="wrap_content"
+                android:src="@drawable/namenew" />
+        </FrameLayout>
+
+        <TextView
+            android:id="@+id/textviewmytext"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/framelayout"
+            android:text="حصريا و بكلمات الاغانى و بامكانيه وضع رنات واشعارات و منبه"
+            android:textAlignment="center"
+            android:textColor="@color/black"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_below="@+id/textviewmytext">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content"
+   >
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="150dp"
+                    app:cardCornerRadius="30dp"
+                    android:layout_margin="10dp"
+                    android:layout_height="60dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:id="@+id/imag_Listen"
+                        android:layout_height="wrap_content"
+                        android:background="@drawable/listen" />
+                </com.google.android.material.card.MaterialCardView>
+
+
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:orientation="horizontal"
+                android:gravity="center_horizontal"
+                android:layout_margin="10dp"
+                android:layout_height="wrap_content"
+
+                >
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="150dp"
+                    app:cardCornerRadius="30dp"
+                    android:layout_margin="10dp"
+                    android:layout_height="60dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/img_shareapp"
+                        android:background="@drawable/share" />
+                </com.google.android.material.card.MaterialCardView>
+
+                <com.google.android.material.card.MaterialCardView
+                    android:layout_width="150dp"
+                    app:cardCornerRadius="30dp"
+                    android:layout_margin="10dp"
+
+                    android:layout_height="60dp">
+
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/imag_rateus"
+                        android:background="@drawable/rateus" />
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+        </LinearLayout>
+
+        <com.google.android.gms.ads.AdView xmlns:ads="http://schemas.android.com/apk/res-auto"
+            android:id="@+id/adView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            ads:adSize="BANNER"
+            ads:adUnitId="ca-app-pub-3940256099942544/6300978111" />
+    </RelativeLayout>
+</layout>

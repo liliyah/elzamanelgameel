@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/splashScrreenFragment">
+
+    <fragment
+        android:id="@+id/splashScrreenFragment"
+        android:name="com.elzaman.android.zamangameel.SplashScrreenFragment"
+        android:label="fragment_splash_scrreen"
+        tools:layout="@layout/fragment_splash_scrreen" >
+        <action
+            android:id="@+id/action_splashScrreenFragment_to_startScreenFragment"
+            app:destination="@id/startScreenFragment"
+            app:popUpTo="@id/splashScrreenFragment"
+            app:popUpToInclusive="true" />
+    </fragment>
+    <fragment
+        android:id="@+id/mainScreenFragment"
+        android:name="com.elzaman.android.zamangameel.MainScreenFragment"
+        android:label="fragment_main_screen"
+        tools:layout="@layout/fragment_main_screen" >
+        <argument
+            android:name="singersid"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/startScreenFragment"
+        android:name="com.elzaman.android.zamangameel.StartScreenFragment"
+        android:label="fragment_start_screen"
+        tools:layout="@layout/fragment_start_screen" >
+        <action
+            android:id="@+id/action_startScreenFragment_to_singersList"
+            app:destination="@id/singersList" />
+    </fragment>
+    <fragment
+        android:id="@+id/singersList"
+        android:name="com.elzaman.android.zamangameel.SingersList"
+        android:label="SingersList" >
+
+        <action
+            android:id="@+id/action_singersList_to_mainScreenFragment"
+            app:destination="@id/mainScreenFragment" />
+    </fragment>
+</navigation>

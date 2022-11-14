@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+<variable
+    name="song"
+    type="com.elzaman.android.dataclass.Song"
+    />
+        <variable
+            name="clickListener"
+            type="com.elzaman.android.zamangameel.MusicItemListner"
+            />
+        <variable
+            name="alarmlistner"
+            type="com.elzaman.android.zamangameel.AlarmListner"
+            />
+    </data>
+<RelativeLayout
+    android:layout_width="match_parent"
+    android:padding="5dp"
+    android:id="@+id/relativelucy"
+    android:layout_height="wrap_content">
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:padding="3dp"
+        app:cardCornerRadius="30dp"
+        android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@{song.isselected == 1  ? @color/yellow : @color/white}"
+
+        android:id="@+id/linearlayoutrecycler"
+                android:padding="3dp"
+android:onClick="@{()-> clickListener.onClick(song)}"
+        android:orientation="horizontal"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+android:clickable="false"
+            android:duplicateParentState="true"
+            android:layout_margin="2dp"
+android:layout_weight="1"
+            android:id="@+id/buttonplaystop"
+            android:src="@drawable/greenplay" />
+
+        <TextView
+            android:layout_width="120dp"
+            android:layout_height="match_parent"
+            android:clickable="false"
+            android:duplicateParentState="true"
+android:layout_weight="2"
+            android:layout_gravity="center"
+            android:id="@+id/textsongtitle"
+            android:textColor="@color/black"
+            android:layout_margin="2dp"
+            android:textAlignment="center"
+            android:textStyle="bold"
+            android:textSize="18sp"
+            android:text="@{song.songName}" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_weight="1"
+android:orientation="horizontal"
+            android:background="@color/green"
+            android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_width="35dp"
+            android:layout_gravity="end"
+            android:id="@+id/imgopenbuttomsheet"
+            android:layout_height="35dp"
+            android:onClick="@{()-> alarmlistner.onClick(song)}"
+
+            android:layout_weight="1"
+            android:src="@drawable/whitemusic" />
+        </LinearLayout>
+
+    </LinearLayout>
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>
+</layout>
